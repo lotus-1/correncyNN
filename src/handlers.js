@@ -14,7 +14,7 @@ const handlerHome = (request, response) => {
   });
 };
 
-const handlerPublic = (request, response) {
+const handlerPublic = (request, response) => {
   const extension = url.split(".")[1];
   const extenstionTypes = {
     html : 'text/html',
