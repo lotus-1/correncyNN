@@ -1,22 +1,22 @@
-const input = document.getElementById('search');
+var input = document.getElementById("search");
 
-input.addEventListener('keyup', (e) => {
+input.addEventListener("keyup", function(e) {
   e.preventDefault();
-  const key = e.which || e.keyCode;
+  var key = e.which || e.keyCode;
   if (key === 13) {
-   fetchData(input.value.toUpperCase());
+    fetchData(input.value.toUpperCase());
   }
 });
 
-const fetchData = (str) => {
-  fetch(`/convert?cur=${str}`)
-    .then((response)=> {
+function fetchData(str) {
+  fetch("/convert?cur=" + str)
+    .then(function(response) {
       return response.json();
     })
-    .then((data)=> {
+    .then(function(data) {
       console.log(data);
     })
-    .catch((err)=> {
+    .catch(function(err) {
       console.log(err);
-    })
-};
+    });
+}

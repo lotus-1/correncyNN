@@ -1,5 +1,8 @@
 const path = require('path');
 const fs = require('fs');
+const request = require('request');
+const url = require('url');
+const querystring = require('querystring');
 
 const handlerHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
@@ -34,8 +37,30 @@ const handlerPublic = (request, response, url) => {
   });
 };
 
+const handlerConvert = (req, res) => {
+  // console.log(req.url);
+  const parsedUrl = url.parse(req.url);
+  // console.log('My parsedUrl is : ', parsedUrl);
+  const currency = parsedUrl.query;
+  const value = querystring.parse(currency);
+  // console.log(value);
+  const myUrl = `https://api.exchangeratesapi.io/latest?base=${value.cur}`;
+  request(myUrl, (err, response, body) => {
+    const parsedBody = JSON.parse(body);
+    // console.log('This is the ILS : ', parsedBody.rates.ILS);
+    if (err) {
+      response.writeHead(404, {'Content-Type' : 'text/html'});
+      response.end('Sorry, there is a server error');
+    } else {
+      console.log(parsedBody.rates.ILS);
+      res.writeHead(200, {'Content-Type' : 'text/html'});
+      res.end(`${parsedBody.rates.ILS}`);
+    }
+  });
+};
 
 module.exports = {
   handlerHome,
-  handlerPublic
-}
+  handlerPublic,
+  handlerConvert,
+};
