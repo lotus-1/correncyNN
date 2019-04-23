@@ -14,7 +14,7 @@ const handlerHome = (request, response) => {
   });
 };
 
-const handlerPublic = (request, response) => {
+const handlerPublic = (request, response, url) => {
   const extension = url.split(".")[1];
   const extenstionTypes = {
     html : 'text/html',
@@ -22,7 +22,7 @@ const handlerPublic = (request, response) => {
     css : 'text/css',
     ico : 'image/x-icon'
   };
-  const filePath = path.json(__dirname, '..', url);
+  const filePath = path.join(__dirname, '..', url);
   fs.readFile(filePath, (err, file) => {
     if (err) {
       response.writeHead(404, {'Content-Type' : 'text/html'});
