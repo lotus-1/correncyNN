@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node tests/test.js | tap-spec",
     "travis": "jshint src/server.js",
-    "server": "nodemon src/server.js"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,12 @@
     "nodemon": "^1.18.11",
     "supertest": "^4.0.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4.10.1"
+    "tape": "^4.10.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
   },
   "dependencies": {
     "request": "^2.88.0"
-  }
+  },
+  "keywords": []
 }
