@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node tests/test.js | tap-spec",
     "travis": "jshint src/server.js",
-    "start": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
