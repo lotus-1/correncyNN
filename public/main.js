@@ -3,7 +3,6 @@ var span = document.getElementById("outcome");
 var title= document.createElement("h3");
 
 input.addEventListener('keyup', function(e) {
-
   e.preventDefault();
   var key = e.which || e.keyCode;
   if (key === 13) {
