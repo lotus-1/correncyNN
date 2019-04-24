@@ -5,6 +5,5 @@ const hostname = process.env.HOST || 'localhost';
 const port = process.env.PORT || 5000;
 
 http.createServer(router).listen(port, () => {
-  //console.log(`Server running on http://${hostname}:${port}`)
-  console.log('host name on heroku is: ', process.env.HOST);
+  console.log(`Server running on http://${hostname}:${port}`)
 });
