@@ -58,7 +58,9 @@ const handlerConvert = (req, res) => {
     }
   })
 } else {
-  return new TypeError('Error');
+  return new TypeError('Not a valid currency name');
+  res.writeHead(404, {'Content-Type': 'text/html'});
+  res.end('Not a valid currency');
 }
 };
 
