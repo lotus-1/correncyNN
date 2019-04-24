@@ -9,6 +9,10 @@
     "server": "nodemon src/server.js",
     "start": "node src/server.js"
   },
+  "engines": {
+    "node": "5.0.0",
+    "npm":"4.6.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lotus-1/correncyNN.git"
