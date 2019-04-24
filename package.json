@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "travis": "jshint src/server.js",
     "server": "nodemon src/server.js"
   },
   "repository": {
@@ -21,6 +22,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "jshint": "^2.10.2",
     "nodemon": "^1.18.11"
   },
   "dependencies": {

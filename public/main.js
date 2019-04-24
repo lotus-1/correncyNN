@@ -24,9 +24,9 @@ function fetchData(str) {
     })
     .catch(function(err) {
       console.log("No such currency");
-      // text = document.createTextNode("Type the right Currency Letters please");
-      // title.appendChild(text);
-      // span.appendChild(title);
+      text = document.createTextNode("Type the right Currency Letters please");
+      title.appendChild(text);
+      span.appendChild(title);
     })
 }
 

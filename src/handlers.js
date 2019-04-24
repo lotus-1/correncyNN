@@ -36,7 +36,7 @@ const handlerPublic = (request, response, url) => {
     }
   });
 };
-// i think we should check if the value.cur is one of our options then continue with the function cuz if not we should write an error msg 
+// i think we should check if the value.cur is one of our options then continue with the function cuz if not we should write an error msg
 const handlerConvert = (req, res) => {
   // console.log(req.url);
   const parsedUrl = url.parse(req.url);
@@ -44,17 +44,19 @@ const handlerConvert = (req, res) => {
   const currency = parsedUrl.query;
   const value = querystring.parse(currency);
   console.log(value);
+  //const 
   const myUrl = `https://api.exchangeratesapi.io/latest?base=${value.cur}`;
   request(myUrl, (err, response, body) => {
     const parsedBody = JSON.parse(body);
     console.log('This is the ILS : ', parsedBody.rates.ILS);
     if (err) {
+
       response.writeHead(404, {'Content-Type' : 'text/html'});
       response.end('Sorry, there is a server error');
     } else {
       console.log(parsedBody.rates.ILS);
       res.writeHead(200, {'Content-Type' : 'text/html'});
-      res.end(parsedBody.rates.ILS);
+      res.end(`${parsedBody.rates.ILS}`);
     }
   });
 };
