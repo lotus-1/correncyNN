@@ -44,7 +44,7 @@ const handlerConvert = (req, res) => {
   const currency = parsedUrl.query;
   const value = querystring.parse(currency);
   console.log(value);
-  //const 
+  //const
   const myUrl = `https://api.exchangeratesapi.io/latest?base=${value.cur}`;
   request(myUrl, (err, response, body) => {
     const parsedBody = JSON.parse(body);
