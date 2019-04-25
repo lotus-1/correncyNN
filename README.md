@@ -10,6 +10,8 @@
 ![](https://images-na.ssl-images-amazon.com/images/I/510WmeXkLXL._SY355_.png)  
 
 start by our Architecture :
+--------------------------
+![](public/assets/architecture.jpeg)
 
 *Action Items :*
 ------------------  
@@ -25,6 +27,12 @@ start by our Architecture :
 
 6- Then in the `server` we wrote our `handler` function that will manipulate the data in the endpoint that the fetch sent. :pager:  
 
+7- We write our test and supertests in `test` folder
+![](public/assets/testsPIC.jpeg)   
+
+8- We also linked our repo to Travis so my code will be checked by Travis too.  
+
+![](public/assets/travisTEST.png)
  *Interesting Things*
  -------------------------
   We have encountered some interesting things while doing the project, most important was the feeling of how our "minds bounced between each other" (Mynah's quote :wink: ), also the "high" of connecting the missing pieces like when we understood how to connect between the fetch and the server using the input value :squirrel: :sweat_smile:   
